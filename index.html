@@ -13,6 +13,10 @@
     />
 
     <title>Frontend Mentor | [Challenge Name Here]</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,6 +26,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
@@ -66,153 +71,341 @@
       .attribution a {
         color: hsl(228, 45%, 44%);
       }
+      .display-none {
+        @apply hidden;
+      }
+      .border-gradient {
+        border-top-color: linear-gradient(
+          to right,
+          hsl(37, 97%, 70%),
+          hsl(329, 70%, 58%)
+        );
+      }
     </style>
   </head>
-  <body class="bg-whiteBg font-inter px-4 w-[90%] border-4">
-    <header>
-      <div class="border-b-2 border-darkGrayishBluetext py-3">
-        <h1 class="font-bold text-2xl">Social Media Dashboard</h1>
+  <body
+    class="bg-whiteBg font-inter px-8 py-6 md:px-[10%] dark:bg-verydarkblueBg"
+  >
+    <header class="md:flex md:justify-between md:items-center">
+      <div class="border-b-2 border-darkGrayishBluetext py-4 md:border-b-0">
+        <h1 class="font-bold text-2xl dark:text-whiteBg">
+          Social Media Dashboard
+        </h1>
         <p class="text-darkGrayishBlueText font-bold">
           Total Followers: 23,004
         </p>
       </div>
-      <div class="flex justify-between pt-3">
-        <p>Dark Mode</p>
-        <p>icon</p>
+      <div class="flex justify-between pt-4">
+        <p class="font-bold text-darkGrayishBlueText md:mr-3">Dark Mode</p>
+        <img
+          src="./images/toggle-left.svg"
+          class="darkmode cursor-pointer"
+          alt=""
+        />
+        
+        <!-- <i
+          id="dark"
+          class="white bx bx-toggle-left text-[2.1rem] cursor-pointer dark:text-lightGrayishBlueCard"
+        ></i> -->
+        <!-- <i
+          class="dark bx bx-toggle-right text-[2.1rem] hidden cursor-pointer"
+        ></i> -->
       </div>
     </header>
     <main>
       <!-- container section for the dashboard -->
-      <section>
+      <section class="grid gap-2 md:grid-cols-4 md:gap-6">
         <!-- facebook -->
-        <div>
-          <p><img src="./images/icon-facebook.svg" alt="fb" />@nathanf</p>
-          <p>1987</p>
-          <p>Followers</p>
-          <p><img src="./images/icon-up.svg" alt="icon-up" />12 Today</p>
+        <div
+          class="border-t-4 border-facebook bg-lightGrayishBlueCard rounded-lg mt-8 p-4 text-center leading-6 cursor-pointer dark:bg-darkDesaturatedBlueCard"
+        >
+          <div class="flex justify-center gap-4 py-6">
+            <img
+              src="./images/icon-facebook.svg"
+              class="self-center"
+              alt="fb"
+            />
+            <p class="text-darkGrayishBlueText font-bold">@nathanf</p>
+          </div>
+          <p class="font-bold text-[3rem] py-4 dark:text-whiteBg">1987</p>
+          <p class="tracking-[5px] text-darkGrayishBlueText">Followers</p>
+          <div
+            class="flex justify-center gap-2 my-3 text-limeGreen font-bold text-sm"
+          >
+            <img src="./images/icon-up.svg" class="self-center" alt="icon-up" />
+            <p>12 Today</p>
+          </div>
         </div>
         <!-- twitter -->
-        <div>
-          <p><img src="./images/icon-twitter.svg" alt="twitter" />@nathanf</p>
-          <p>1044</p>
-          <p>Followers</p>
-          <p><img src="./images/icon-up.svg" alt="icon-up" />99 Today</p>
+        <div
+          class="border-t-4 border-twitter bg-lightGrayishBlueCard rounded-lg mt-8 p-4 text-center leading-6 cursor-pointer dark:bg-darkDesaturatedBlueCard"
+        >
+          <div class="flex justify-center gap-4 py-6">
+            <img
+              src="./images/icon-twitter.svg"
+              class="self-center"
+              alt="twitter"
+            />
+            <p class="text-darkGrayishBlueText font-bold">@nathanf</p>
+          </div>
+          <p class="font-bold text-[3rem] py-4 x dark:text-whiteBg">1044</p>
+          <p class="tracking-[5px] text-darkGrayishBlueText">Followers</p>
+          <div
+            class="flex justify-center gap-2 my-3 text-limeGreen font-bold text-sm"
+          >
+            <img src="./images/icon-up.svg" class="self-center" alt="icon-up" />
+            <p>99 Today</p>
+          </div>
         </div>
         <!-- instagram -->
-        <div>
-          <p>
-            <img src="./images/icon-instagram.svg" alt="insta" />@realnathanf
-          </p>
-          <p>11k</p>
-          <p>Followers</p>
-          <p><img src="./images/icon-up.svg" alt="icon-up" />1099 Today</p>
+        <div
+          class="border-t-4 border-gradient bg-lightGrayishBlueCard rounded-lg mt-8 p-4 text-center leading-6 cursor-pointer dark:bg-darkDesaturatedBlueCard"
+        >
+          <div class="flex justify-center gap-4 py-6">
+            <img
+              src="./images/icon-instagram.svg"
+              class="self-center"
+              alt="insta"
+            />
+            <p class="text-darkGrayishBlueText font-bold">@realnathanf</p>
+          </div>
+          <p class="font-bold text-[3rem] py-4 dark:text-whiteBg">11k</p>
+          <p class="tracking-[5px] text-darkGrayishBlueText">Followers</p>
+          <div
+            class="flex justify-center gap-2 my-3 text-limeGreen font-bold text-sm"
+          >
+            <img src="./images/icon-up.svg" class="self-center" alt="icon-up" />
+            <p>1099 Today</p>
+          </div>
         </div>
         <!-- youtube -->
-        <div>
-          <p><img src="./images/icon-youtube.svg" alt="fb" />Nathan F.</p>
-          <p>8239</p>
-          <p>Subscribers</p>
-          <p><img src="./images/icon-down.svg" alt="icon-down" />144 Today</p>
+        <div
+          class="border-t-4 border-youTube bg-lightGrayishBlueCard rounded-lg mt-8 p-4 text-center leading-6 cursor-pointer dark:bg-darkDesaturatedBlueCard"
+        >
+          <div class="flex justify-center gap-4 py-6">
+            <img src="./images/icon-youtube.svg" class="self-center" alt="fb" />
+            <p class="text-darkGrayishBlueText font-bold">Nathan F.</p>
+          </div>
+          <p class="font-bold text-[3rem] py-4 dark:text-whiteBg">8239</p>
+          <p class="tracking-[5px] text-darkGrayishBlueText">Subscribers</p>
+          <div
+            class="flex justify-center gap-2 my-3 text-youTube font-bold text-sm"
+          >
+            <img
+              src="./images/icon-down.svg"
+              class="self-center"
+              alt="icon-down"
+            />
+            <p>144 Today</p>
+          </div>
         </div>
       </section>
 
       <!-- container section for overview -->
-      <section>
-        <h2>Overview-Today</h2>
-        <div>
+      <section class="my-8">
+        <h2
+          class="font-bold text-2xl text-darkGrayishBlueText my-8 dark:text-whiteBg"
+        >
+          Overview-Today
+        </h2>
+        <div class="grid gap-5 md:grid-cols-4 md:gap-6">
           <!-- div individual container(facebook) -->
-          <div>
-            <div>
-              <p>Page Views</p>
-              <img src="./images/icon-facebook.svg" alt="fb" />
+          <div
+            class="bg-lightGrayishBlueCard rounded-lg p-4 cursor-pointer dark:bg-darkDesaturatedBlueCard"
+          >
+            <div class="flex justify-between p-4">
+              <p class="text-darkGrayishBlueText font-bold">Page Views</p>
+              <img
+                src="./images/icon-facebook.svg"
+                class="self-center"
+                alt="fb"
+              />
             </div>
-            <div>
-              <p>87</p>
-              <p><img src="./images/icon-up.svg" alt="i-up" />3%</p>
+            <div class="flex justify-between p-4">
+              <p class="font-bold text-[2rem] dark:text-whiteBg">87</p>
+              <div class="flex items-center text-sm text-limeGreen font-bold">
+                <img
+                  src="./images/icon-up.svg"
+                  class="self-center"
+                  alt="i-up"
+                />
+                <p>3%</p>
+              </div>
             </div>
           </div>
           <!-- End of div of individual container -->
           <!-- div individual container(facebook) -->
-          <div>
-            <div>
-              <p>Likes</p>
-              <img src="./images/icon-facebook.svg" alt="fb" />
+          <div
+            class="bg-lightGrayishBlueCard rounded-lg p-4 cursor-pointer dark:bg-darkDesaturatedBlueCard"
+          >
+            <div class="flex justify-between p-4">
+              <p class="text-darkGrayishBlueText font-bold">Likes</p>
+              <img
+                src="./images/icon-facebook.svg"
+                class="self-center"
+                alt="fb"
+              />
             </div>
-            <div>
-              <p>52</p>
-              <p><img src="./images/icon-down.svg" alt="i-down" />2%</p>
+            <div class="flex justify-between p-4">
+              <p class="font-bold text-[2rem] dark:text-whiteBg">52</p>
+              <div class="flex items-center text-sm text-youTube font-bold">
+                <img
+                  src="./images/icon-down.svg"
+                  class="self-center"
+                  alt="i-down"
+                />
+                <p>2%</p>
+              </div>
             </div>
           </div>
           <!-- End of div of individual container -->
           <!-- div individual container(instagram) -->
-          <div>
-            <div>
-              <p>Likes</p>
-              <img src="./images/icon-instagram.svg" alt="insta" />
+          <div
+            class="bg-lightGrayishBlueCard rounded-lg p-4 cursor-pointer dark:bg-darkDesaturatedBlueCard"
+          >
+            <div class="flex justify-between p-4">
+              <p class="text-darkGrayishBlueText font-bold">Likes</p>
+              <img
+                src="./images/icon-instagram.svg"
+                class="self-center"
+                alt="insta"
+              />
             </div>
-            <div>
-              <p>5462</p>
-              <p><img src="./images/icon-up.svg" alt="i-up" />2257%</p>
+            <div class="flex justify-between p-4">
+              <p class="font-bold text-[2rem] dark:text-whiteBg">5462</p>
+              <div class="flex items-center text-sm text-limeGreen font-bold">
+                <img
+                  src="./images/icon-up.svg"
+                  class="self-center"
+                  alt="i-down"
+                />
+                <p>2257%</p>
+              </div>
             </div>
           </div>
           <!-- End of div of individual container -->
           <!-- div individual container(instagram) -->
-          <div>
-            <div>
-              <p>Profile Views</p>
-              <img src="./images/icon-instagram.svg" alt="insta" />
+          <div
+            class="bg-lightGrayishBlueCard rounded-lg p-4 cursor-pointer dark:bg-darkDesaturatedBlueCard"
+          >
+            <div class="flex justify-between p-4">
+              <p class="text-darkGrayishBlueText font-bold">Profile Views</p>
+              <img
+                src="./images/icon-instagram.svg"
+                class="self-center"
+                alt="fb"
+              />
             </div>
-            <div>
-              <p>52k</p>
-              <p><img src="./images/icon-up.svg" alt="i-up" />1375%</p>
+            <div class="flex justify-between p-4">
+              <p class="font-bold text-[2rem] dark:text-whiteBg">52k</p>
+              <div class="flex items-center text-sm text-limeGreen font-bold">
+                <img
+                  src="./images/icon-up.svg"
+                  class="self-center"
+                  alt="i-up"
+                />
+                <p>1357%</p>
+              </div>
             </div>
           </div>
           <!-- End of div of individual container -->
           <!-- div individual container(twitter) -->
-          <div>
-            <div>
-              <p>Retweets</p>
-              <img src="./images/icon-twitter.svg" alt="twitter" />
+          <div
+            class="bg-lightGrayishBlueCard rounded-lg p-4 cursor-pointer dark:bg-darkDesaturatedBlueCard"
+          >
+            <div class="flex justify-between p-4">
+              <p class="text-darkGrayishBlueText font-bold">Retweets</p>
+              <img
+                src="./images/icon-twitter.svg"
+                class="self-center"
+                alt="twitter"
+              />
             </div>
-            <div>
-              <p>117</p>
-              <p><img src="./images/icon-up.svg" alt="i-up" />303%</p>
+            <div class="flex justify-between p-4">
+              <p class="font-bold text-[2rem] dark:text-whiteBg">117</p>
+              <div class="flex items-center text-sm text-limeGreen font-bold">
+                <img
+                  src="./images/icon-up.svg"
+                  class="self-center"
+                  alt="i-up"
+                />
+                <p>303%</p>
+              </div>
             </div>
           </div>
           <!-- End of div of individual container -->
           <!-- div individual container(twitter) -->
-          <div>
-            <div>
-              <p>Likes</p>
-              <img src="./images/icon-twitter.svg" alt="twitter" />
+          <div
+            class="bg-lightGrayishBlueCard rounded-lg p-4 cursor-pointer dark:bg-darkDesaturatedBlueCard"
+          >
+            <div class="flex justify-between p-4">
+              <p class="text-darkGrayishBlueText font-bold">Likes</p>
+              <img
+                src="./images/icon-twitter.svg"
+                class="self-center"
+                alt="twitter"
+              />
             </div>
-            <div>
-              <p>507</p>
-              <p><img src="./images/icon-up.svg" alt="i-up" />553%</p>
+            <div class="flex justify-between p-4">
+              <p class="font-bold text-[2rem] dark:text-whiteBg">507</p>
+              <div class="flex items-center text-sm text-limeGreen font-bold">
+                <img
+                  src="./images/icon-up.svg"
+                  class="self-center"
+                  alt="i-up"
+                />
+                <p>553%</p>
+              </div>
             </div>
           </div>
           <!-- End of div of individual container -->
           <!-- div individual container(youtube) -->
-          <div>
-            <div>
-              <p>Likes</p>
-              <img src="./images/icon-youtube.svg" alt="fb" />
+          <div
+            class="bg-lightGrayishBlueCard rounded-lg p-4 cursor-pointer dark:bg-darkDesaturatedBlueCard"
+          >
+            <div class="flex justify-between p-4">
+              <p class="text-darkGrayishBlueText font-bold">Likes</p>
+              <img
+                src="./images/icon-youtube.svg"
+                class="self-center"
+                alt="youtube"
+              />
             </div>
-            <div>
-              <p>107</p>
-              <p><img src="./images/icon-down.svg" alt="i-down" />19%</p>
+            <div class="flex justify-between p-4">
+              <p class="font-bold text-[2rem] dark:text-whiteBg">107</p>
+              <div class="flex items-center text-sm text-youTube font-bold">
+                <img
+                  src="./images/icon-down.svg"
+                  class="self-center"
+                  alt="i-down"
+                />
+                <p>19%</p>
+              </div>
             </div>
           </div>
           <!-- End of div of individual container -->
           <!-- div individual container(youtube) -->
-          <div>
-            <div>
-              <p>Total Views</p>
-              <img src="./images/icon-youtube.svg" alt="fb" />
+          <div
+            class="bg-lightGrayishBlueCard rounded-lg p-4 cursor-pointer dark:bg-darkDesaturatedBlueCard"
+          >
+            <div class="flex justify-between p-4">
+              <p class="text-darkGrayishBlueText font-bold">Total Views</p>
+              <img
+                src="./images/icon-youtube.svg"
+                class="self-center"
+                alt="youtube"
+              />
             </div>
-            <div>
-              <p>1407</p>
-              <p><img src="./images/icon-down.svg" alt="i-down" />12%</p>
+            <div class="flex justify-between p-4">
+              <p class="font-bold text-[2rem] text-whiteBg">1407</p>
+              <div class="flex items-center text-sm text-youTube font-bold">
+                <img
+                  src="./images/icon-down.svg"
+                  class="self-center"
+                  alt="i-down"
+                />
+                <p>12%</p>
+              </div>
             </div>
           </div>
           <!-- End of div of individual container -->
@@ -226,5 +419,6 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
     </div> -->
+    <script src="./index.js"></script>
   </body>
 </html>
